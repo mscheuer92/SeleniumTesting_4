@@ -17,7 +17,7 @@ class main(unittest.TestCase):
         driver.get("https://www.odu.edu")
         
         home = homePage(driver)
-        home.clicklink();
+        home.clicklink()
      
         myOdu = myoduPage(driver)
         myOdu.clickLogin()
