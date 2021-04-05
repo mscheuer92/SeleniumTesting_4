@@ -1,7 +1,9 @@
 from selenium import webdriver
 import unittest
 from searchObject import SearchObject
-#from objectPage import ObjectPage
+from sortPrice import SortPrice
+from selectItem import SelectItem
+from addToCart import AddtoCart
 
 class mainFunction (unittest.TestCase):
    
@@ -19,10 +21,27 @@ class mainFunction (unittest.TestCase):
         search.enter_itemSearch("coffee")
         search.click_Button()
   
-        #checkbox = ObjectPage(driver)
-        #checkbox.click_checkbox()
+        sort = SortPrice(driver)
+        sort.clickButton()
+        
+        select = SelectItem(driver)
+        select.clickItem()
+      
+        add = AddtoCart(driver)
+        add.checkQuantity("//*[@id='qtySubTxt']/span")
+       
+        ##What is the syntax for nested def?
+        
+       # add.checkQuantity(addQuantity)
+       
         
    
+      
         
+    
+    
+    
+    
+    
     if __name__ == "__main__":
             unittest.main()
