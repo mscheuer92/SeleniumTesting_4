@@ -1,0 +1,5 @@
+4/5/2021
+  -Added two new classes
+  -Currently working out how to include a nested function into POM.
+  -Currently the project opens ebay, searches, sorts by a specificed price, and returns the number available
+  -The nested function will seperate the integer from the string of available, and then input that number into the quantity location
