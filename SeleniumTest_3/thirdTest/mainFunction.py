@@ -4,6 +4,7 @@ from searchObject import SearchObject
 from sortPrice import SortPrice
 from selectItem import SelectItem
 from addToCart import AddtoCart
+from insideCart import InsideCart
 
 class mainFunction (unittest.TestCase):
    
@@ -29,12 +30,12 @@ class mainFunction (unittest.TestCase):
       
         add = AddtoCart(driver)
         add.checkQuantity("//*[@id='qtySubTxt']/span")
-       
-        ##What is the syntax for nested def?
+        add.addToCart()
+        add.goToCart()
         
-       # add.checkQuantity(addQuantity)
+        remove = InsideCart(driver)
+        remove.removeItem()
        
-        
    
       
         

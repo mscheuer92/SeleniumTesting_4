@@ -5,19 +5,17 @@ class AddtoCart():
     def __init__(self,driver):
         self.driver = driver
         self.driver.findQuantity_by_xpath = "//*[@id='qtySubTxt']/span"
-        self.driver.clearQuantity_by_name = "quantity"
-        self.driver.addNewQuantity_by_name = "quantity"
+        self.driver.addtocart_by_id = 'atcRedesignId_btn'
+        self.driver.gotoCart_by_link_text = "Go to cart"
     
     
 
     def checkQuantity(self,driver):
         available = self.driver.find_element_by_xpath(self.driver.findQuantity_by_xpath).text
         print available
+             
+        def addQuantity(self):
             
-       ## Next step is to fiigure our how to include this in the Main function     
-        def addQuantity(self,driver):
-            self.driver.find_element_by_name(self.driver.clearQuantity_by_name).clear(); 
-        
             #Separating the integer from the rest of the string
             avail_string = available
             number = []
@@ -26,18 +24,24 @@ class AddtoCart():
                     number.append(int(word))
                     print number[0]
         
-            #convert int back to string
+            #convert integer back to string
             converted = str(number[0])
-            return converted
+            
+            #add string to the quantity block
+            self.driver.find_element_by_name("quantity").clear(); 
+            self.driver.find_element_by_name("quantity").send_keys(converted)
+            
+            
         
-            #add converted number to the quantity box
-            #self.driver.find_element_by_name(self.driver.addNewQuantity_by_name).send_keys(converted)
-        return addQuantity(driver)
        
+        addQuantity(self)
+       
+   
+    def addToCart(self):    
+        self.driver.find_element_by_id(self.driver.addtocart_by_id).click()
     
-    
-   # def addTotheCart(self):
-        
+    def goToCart(self):
+        self.driver.find_element_by_link_text(self.driver.gotoCart_by_link_text).click()
         
         
         
