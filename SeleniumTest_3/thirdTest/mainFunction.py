@@ -37,12 +37,5 @@ class mainFunction (unittest.TestCase):
         remove.removeItem()
        
    
-      
-        
-    
-    
-    
-    
-    
     if __name__ == "__main__":
             unittest.main()

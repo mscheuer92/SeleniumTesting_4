@@ -8,7 +8,6 @@ class AddtoCart():
         self.driver.addtocart_by_id = 'atcRedesignId_btn'
         self.driver.gotoCart_by_link_text = "Go to cart"
     
-    
 
     def checkQuantity(self,driver):
         available = self.driver.find_element_by_xpath(self.driver.findQuantity_by_xpath).text
